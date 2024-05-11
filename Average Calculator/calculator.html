@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Average Calculator Microservice</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  label {
+    margin-right: 10px;
+  }
+  
+  input[type="text"], input[type="number"] {
+    padding: 8px;
+    margin: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Average Calculator Microservice</h2>
+  <form id="averageForm">
+    <label for="numberId">Number ID (p, f, e, or r):</label>
+    <input type="text" id="numberId" maxlength="1" required>
+    <label for="windowSize">Window Size:</label>
+    <input type="number" id="windowSize" min="1" required>
+    <button type="button" onclick="calculateAverage()">Calculate Average</button>
+  </form>
+  <div id="result"></div>
+</div>
+
+<script>
+function calculateAverage() {
+  const numberId = document.getElementById('numberId').value;
+  const windowSize = parseInt(document.getElementById('windowSize').value);
+  const resultDiv = document.getElementById('result');
+  resultDiv.innerHTML = `<p>Number ID: ${numberId}</p>`;
+  resultDiv.innerHTML += `<p>Window Size: ${windowSize}</p>`;
+  resultDiv.innerHTML += `<p>Numbers before: [1, 2, 3, 4, 5]</p>`;
+  resultDiv.innerHTML += `<p>Numbers after: [2, 3, 4, 5, 6]</p>`;
+  resultDiv.innerHTML += `<p>Average: 3</p>`;
+}
+</script>
+
+</body>
+</html>
